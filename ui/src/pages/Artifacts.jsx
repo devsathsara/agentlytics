@@ -383,9 +383,9 @@ export default function Artifacts() {
   for (const p of data) for (const e of p.editors) allEditors.add(e.editor)
 
   return (
-    <div className="h-full">
+    <div className="flex flex-col" style={{ height: 'calc(100vh - 48px)' }}>
       {/* Header */}
-      <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--c-border)' }}>
+      <div className="px-4 py-3 flex-shrink-0" style={{ borderBottom: '1px solid var(--c-border)' }}>
         <PageHeader icon={Package} title="Artifacts">
           <span className="text-[11px]" style={{ color: 'var(--c-text3)' }}>{totalArtifacts} artifacts · {totalProjects} projects · {allEditors.size} editors</span>
           <div className="ml-auto relative">
@@ -408,7 +408,7 @@ export default function Artifacts() {
         </div>
       ) : null}
 
-      <div className="flex" style={{ height: 'calc(100vh - 130px)' }}>
+      <div className="flex flex-1 min-h-0">
         {/* Sidebar: project > editor tree */}
         <div className="w-[340px] shrink-0 flex flex-col" style={{ background: 'var(--c-card)', borderRight: '1px solid var(--c-border)' }}>
           <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider" style={{ color: 'var(--c-text3)', borderBottom: '1px solid var(--c-border)' }}>
